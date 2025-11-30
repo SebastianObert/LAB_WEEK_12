@@ -49,8 +49,8 @@ class MainActivity : AppCompatActivity() {
                 // Launch coroutine pertama untuk meng-collect list movies
                 launch {
                     movieViewModel.popularMovies.collect { movies ->
-                        // Saat ini kita menampilkan semua data tanpa filter (sesuai modul Part 2)
-                        movieAdapter.setMovies(movies)
+                        // ViewModel sekarang menangani pemfilteran dan pengurutan
+                        movieAdapter.submitList(movies)
                     }
                 }
 
